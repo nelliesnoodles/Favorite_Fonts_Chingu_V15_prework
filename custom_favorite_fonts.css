@@ -1,0 +1,188 @@
+﻿
+html {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+/*body dark theme 
+    background-color: #121015;
+    color: white;
+*/
+body {
+    background-color: #F5F4F7;
+    margin: 0;
+    padding: 0;
+}
+
+/* dark theme link color
+    color: #e4e3e0
+*/
+a {
+    color: #3a2d2d;
+}
+/* nav dark theme 
+    background-color: #3a3842
+    color: #efeeeb
+*/
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #EBEAEE;
+    padding-left: 10px;
+    color: #616062;
+    border-bottom: solid 1px white;
+    margin-bottom: 2px;
+    width: 100%;
+    height: 3em;
+    justify-content: center;
+   
+}
+div {
+    display: flex;
+    flex-direction: inherit;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20%;
+}
+.right_align {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.left_align {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-right: auto;
+   
+}
+    nav h4 {
+        align-self: flex-start;
+        
+    }
+    nav a{
+        align-self: flex-end;
+        padding-left: 10px;
+        padding-right: 2px;
+        text-decoration: none;
+        
+    }
+
+main {
+    border: none;
+}
+img {
+    border: none;
+    padding: 10px;
+}
+
+/* Dark theme color: #181f27 */
+.tools_bar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-radius: initial;
+    background-color: #f5f6f7;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+    .tools_bar input {
+        padding: 8px;
+        margin: 0;
+        border-radius: 10px;
+        font-size: 1.5em;
+        text-align: center;
+        border: none;
+        width: 25vw;
+        box-shadow:  5px 3px rgba(10, 1, 10, 0.3);
+    }
+#reset_page {
+    background-image: url('undo-7.png');
+    background-size:cover;
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+   
+
+}
+
+/* for selecting a font size to display fetched google fonts in.*/
+select {
+    font-size: 1.5em;
+    font-family: 'Bebas Neue', cursive;
+    height: auto;
+    width: auto;
+    border-radius: 20%;
+}
+
+option #12px {
+    font-size: 12px;
+    font-weight: normal;
+}
+option #24px {
+    font-size: 24px;
+    font-weight: bold;
+}
+option #32px {
+    font-size: 32px;
+    font-weight: bolder;
+}
+footer {
+    border-top: solid 1px white;
+    background-color: #EBEAEE;
+    color: #616062;
+}
+
+/*
+    the font_cards need to inherit the background  and font color
+    to apply the dark theme to every incoming load for a font.
+*/
+.FontDeck {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3vh;
+    padding: 5px;
+}
+
+.font_card {
+    border-top: 2px solid grey;
+    background: inherit;
+    color: inherit;
+}
+
+
+/*
+    for checkbox to change the page between light/dark themes
+*/
+.themes {
+    background-color: silver;
+}
+#lightTheme {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+    border: solid 1px black;
+    box-shadow: -1px 3px rgba(10, 1, 10, 0.3);
+    margin-right: 5px;
+
+}
+#darkTheme {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: rgba(228, 228, 228, 0.4) 4px 5px inset;
+    border: solid 1px purple;
+    box-shadow: -1px 3px rgba(10, 1, 10, 0.3);
+}
+
+
+
