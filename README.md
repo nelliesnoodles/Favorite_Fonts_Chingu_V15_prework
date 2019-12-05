@@ -37,16 +37,25 @@ Make an interactive page as much like the Google Fonts Catalog page as possible.
 
 
 ### files:
-javascript
-html
-..* Favorite_fonts.html
-css
-..* custom_favorite_fonts.css
-text/markdown
-..* README.md
-images
-..* undo-7.png (reset page button)
++ javascript
++ html
 
-testing
-..* console.log()
-..* manual break and fix
+.. Favorite_fonts.html
+
++ css
+
+.. custom_favorite_fonts.css
+
++ text/markdown
+
+.. README.md
+
++ images
+
+.. undo-7.png (reset page button)
+
++ testing
+
+.. console.log()
+
+.. manual break and fix
