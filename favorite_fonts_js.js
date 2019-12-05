@@ -23,6 +23,7 @@ function set_DOM() {
 }
 
 
+// _+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
 
 // ----------  Dark & light theme scripts -----------
 function colorLinks(hex) {
@@ -91,8 +92,12 @@ function get_and_set_checks() {
     change_theme(dark, light)
 }
 
-//----- End dark and light theme scripts ---------
+//----- END dark and light theme scripts ---------
+// _+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
+//----------- The Google font API(s)   -----------
 
+
+//---END google font API(s)
 
 
 //----- SET listeners, window.load --------------
