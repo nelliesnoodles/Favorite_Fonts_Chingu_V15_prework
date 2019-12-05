@@ -13,7 +13,8 @@
     <title>Voyage 15 Favorite Fonts</title>
 </head>
 <body>
-    <nav>
+  <!--------  NAV BAR -->
+    <nav id="nav_bar">
         <div class="left_align">
             <h4 class="title">Google FONTS</h4>
         </div>
@@ -26,14 +27,15 @@
 
 
     </nav>
-    <div class="tools_bar">
+    <!-----  TOOLS BAR -->
+    <div class="tools_bar" id="tools_bar">
     <div>
        <input type="text" placeholder="Search"/>
         <input type="text" placeholder="Type something here"/>
     </div>
         <div class="themes">
-    <input type="checkbox" id="lightTheme"/>
-    <input type="checkbox" id="darkTheme" />
+    <input type="checkbox" id="lightTheme" value='true'/>
+    <input type="checkbox" id="darkTheme" value='false'/>
             </div>
 
     <select id="fontSize">
@@ -43,14 +45,15 @@
     </select>
     <image id="reset_page"></image>
         </div>
+        <!---------  MAIN font displays  -->
     <main>
         <!--  display the google API cards here-->
         <div class="FontDeck">
-            <div class="font_card">
+            <div class="font_card" id="font_card">
                 <h2>FONTS NAME</h2>
             </div>
         </div>
-       
+
 
     </main>
     <footer>
