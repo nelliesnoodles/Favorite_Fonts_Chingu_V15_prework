@@ -4,7 +4,7 @@ About Favorite Fonts
 project by Nellie Tobey
 -----------------------
 
-##Tier 2 solo project
+## Tier 2 solo project
 
 **The requirements for this project can be found at:**
 
@@ -18,13 +18,13 @@ This project uses two API's:
 
 **Tier 2 specific: do not use the Google Web Font Loader**
 
-##The goal:
+## The goal:
 
 Make an interactive page as much like the Google Fonts Catalog page as possible.
 
 >Tier 2: styling optional?
 
-##Include:
+## Include:
 
 + Working links to the google fonts menu items
 + a dark and light theme activator(switch)
@@ -36,7 +36,7 @@ Make an interactive page as much like the Google Fonts Catalog page as possible.
 + reset all display elements without reloading the page
 
 
-###files:
+### files:
 javascript
 html
 ..* Favorite_fonts.html
