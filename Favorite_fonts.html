@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="custom_favorite_fonts.css" />
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet" />
     <!-- font awesome license     https://fontawesome.com/license  SVG used for reset icon in the tools bar.-->
-
+    <script type="text/javascript" src="favorite_fonts_js.js"></script>
     <title>Voyage 15 Favorite Fonts</title>
 </head>
 <body>
@@ -31,17 +31,18 @@
     <div class="tools_bar" id="tools_bar">
     <div>
        <input type="text" placeholder="Search"/>
-        <input type="text" placeholder="Type something here"/>
+        <input id="type_something" type="text" placeholder="Type something here" onkeyup="call_keydown()"/>
     </div>
         <div class="themes">
     <input type="checkbox" id="lightTheme" value='true'/>
     <input type="checkbox" id="darkTheme" value='false'/>
             </div>
 
-    <select id="fontSize">
-        <option id="12px">12px</option>
-        <option id="24px">24px</option>
-        <option id="32px">32px</option>
+    <select id="fontSize" onchange="font_size_select(this)">
+        <option id="12px" value=12>12px</option>
+        <option id="24px" value=24>24px</option>
+        <option id="32px" value=32>32px</option>
+        <option id="40px" value=40>40px</option>
     </select>
     <image id="reset_page"></image>
         </div>
@@ -51,6 +52,8 @@
         <div class="FontDeck">
             <div class="font_card" id="font_card">
                 <h2>FONTS NAME</h2>
+                <h3 class="sometext" id="sometext">
+                "When you reach the end of your rope, tie a knot in it and hang on." -Franklin D. Roosevelt</h3>
             </div>
         </div>
 

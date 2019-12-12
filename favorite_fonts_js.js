@@ -10,6 +10,7 @@
 
 let light_theme_check;
 let dark_theme_check;
+let type_something;
 
 
 //  -------------------------------------------------------------
@@ -20,6 +21,7 @@ let dark_theme_check;
 function set_DOM() {
     light_theme_check = document.getElementById("lightTheme");
     dark_theme_check = document.getElementById("darkTheme");
+    type_something = document.getElementById("type_something");
 }
 
 
@@ -99,11 +101,44 @@ function get_and_set_checks() {
 
 //---END google font API(s)
 
+//***************  Key down in type something **********//
+function change_contents_card(new_string) {
+  element = document.getElementsByClassName("sometext");
+  for(i=0; i < element.length; i++) {
+    child = element[i];
+
+    child.innerHTML = new_string
+  }
+}
+
+function call_keydown(){
+  new_string = document.getElementById("type_something").value;
+  // this.value returns Undefined.
+  //console.log(new_string);
+  change_contents_card(new_string);
+
+}
+
+//**************   END type something ******************//
+
+
+// Change font size -------------------
+
+function font_size_select(font){
+  //console.log(font.value);
+  new_size = font.value.toString() + "px";
+  element = document.getElementById("sometext");
+  element.style.fontSize = new_size;
+
+
+}
+
 
 //----- SET listeners, window.load --------------
 function set_listeners() {
     dark_theme_check.addEventListener('click', get_and_set_checks);
     light_theme_check.addEventListener('click', get_and_set_checks);
+
 
 }
 
