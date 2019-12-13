@@ -11,6 +11,7 @@
 let light_theme_check;
 let dark_theme_check;
 let type_something;
+let reset;
 
 let google_api_json;
 let font_names = ["ABeeZee" ,
@@ -140,7 +141,6 @@ let font_names = ["ABeeZee" ,
 "Bree Serif"  ,
 "Bubblegum Sans"  ,
 "Bubbler One"  ,
-"Buda"  ,
 "Buenard"  ,
 "Bungee"  ,
 "Bungee Hairline"  ,
@@ -192,7 +192,6 @@ let font_names = ["ABeeZee" ,
 "Cinzel Decorative"  ,
 "Clicker Script"  ,
 "Coda"  ,
-"Coda Caption"  ,
 "Codystar"  ,
 "Coiny"  ,
 "Combo"  ,
@@ -523,7 +522,6 @@ let font_names = ["ABeeZee" ,
 "Modern Antiqua"  ,
 "Mogra"  ,
 "Molengo"  ,
-"Molle"  ,
 "Monda"  ,
 "Monofett"  ,
 "Monoton"  ,
@@ -581,7 +579,6 @@ let font_names = ["ABeeZee" ,
 "Oleo Script"  ,
 "Oleo Script Swash Caps"  ,
 "Open Sans"  ,
-"Open Sans Condensed"  ,
 "Oranienbaum"  ,
 "Orbitron"  ,
 "Oregano"  ,
@@ -824,7 +821,6 @@ let font_names = ["ABeeZee" ,
 "Uncial Antiqua"  ,
 "Underdog"  ,
 "Unica One"  ,
-"UnifrakturCook"  ,
 "UnifrakturMaguntia"  ,
 "Unkempt"  ,
 "Unlock"  ,
@@ -882,6 +878,7 @@ function set_DOM() {
     light_theme_check = document.getElementById("lightTheme");
     dark_theme_check = document.getElementById("darkTheme");
     type_something = document.getElementById("type_something");
+    reset = document.getElementById("reset");
 }
 
 
@@ -1034,11 +1031,31 @@ function create_cards(){
      document.getElementById('FontDeck').appendChild(newNode);
   }
 }
+//----------  reset the page without reloading -----
+//---  USE INPUT TYPE=RESET instead.
+
+function reset_page_items(){
+  new_size = "12px";
+  origin_text = '"When you reach the end of your rope, tie a knot in it and hang on." -Franklin D. Roosevelt';
+  element = document.getElementsByClassName("sometext");
+  for(i=0; i<element.length; i++){
+     childnode = element[i];
+     childnode.style.fontSize = new_size;
+     childnode.innerHTML = origin_text;
+  }
+
+}
+
+
+//-----------  END reset ---------------------
 
 //----- SET listeners, window.load --------------
 function set_listeners() {
     dark_theme_check.addEventListener('click', get_and_set_checks);
     light_theme_check.addEventListener('click', get_and_set_checks);
+    reset.addEventListener('click', reset_page_items);
+
+
     //create_cards()
 
 }
