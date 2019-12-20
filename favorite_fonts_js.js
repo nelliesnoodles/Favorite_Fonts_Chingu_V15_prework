@@ -17,6 +17,8 @@ const Http = new XMLHttpRequest();
 const url='https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCM8prGHcP7hRrejX-WrHzBxx6H-5IPzpQ';
 let google_api_json;
 let font_names;
+const load_card_amount = 12
+var current = 0
 //  -------------------------------------------------------------
 //  ---Set DOM elements into the javascript after window load ---
 //  -------------------------------------------------------------
@@ -157,11 +159,26 @@ function font_size_select(font){
 
 }
 
+
+function remove_400_fonts(){
+  // These fonts fail to load See README.md
+  var molle = "Molle"
+  var condens = "Open Sans Condensed"
+  var sunflower = "Sunflower"
+  var unifrank = "UnifrakturCook"
+  var coda = "Coda Caption"
+
+}
+
 function append_font_names(){
 
   max = font_names.length
+  amount = current + load_card_amount
+  i = current
+
+
   google_href="https://fonts.googleapis.com/css?family="
-  for(i=0; i<max; i++){
+  for(i; i<max && i<amount; i++){
        font_name = font_names[i]
        google_link = google_href + font_name
        var newlink = document.createElement('link');
@@ -175,7 +192,8 @@ function append_font_names(){
 
 function create_cards(){
   var max = font_names.length - 1;
-  for(i=0; i<max; i++){
+  i = current
+  for(i; i<max; i++){
      var fontName = font_names[i];
 
      var newNode = document.createElement('div');
@@ -199,6 +217,8 @@ function create_cards(){
 
 function reset_page_items(){
   new_size = "12px";
+  current = 0
+  window.scrollTo(0,0)
   origin_text = '"When you reach the end of your rope, tie a knot in it and hang on." -Franklin D. Roosevelt';
   element = document.getElementsByClassName("sometext");
   for(i=0; i<element.length; i++){
@@ -211,6 +231,13 @@ function reset_page_items(){
 
 
 //-----------  END reset ---------------------
+//----------  load more fonts ------------
+function load_more(){
+  if(window.scrollTop() > document.height - window.height){
+    current += load_card_amount
+
+  }
+}
 
 //----- SET listeners, window.load --------------
 function set_listeners() {
@@ -230,6 +257,7 @@ function assign_json(myJson) {
   })
   font_names = modifiedData
   console.log("assigning font_names...")
+  console.log(font_names)
   create_cards()
   append_font_names()
   //console.log(modifiedData)

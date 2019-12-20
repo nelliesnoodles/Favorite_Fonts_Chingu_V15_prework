@@ -23,7 +23,17 @@ This project uses two API's:
 Make an interactive page as much like the Google Fonts Catalog page as possible.
 
 >Tier 2: styling optional?
+## These five fonts fail to load.
+### Error message below:
 
+fonts.googleapis.com/css?family=Coda%20Caption:1 Failed to load resource: the server responded with a status of 400 ()
+fonts.googleapis.com/css?family=Molle:1 Failed to load resource: the server responded with a status of 400 ()
+fonts.googleapis.com/css?family=Open%20Sans%20Condensed:1 Failed to load resource: the server responded with a status of 400 ()
+fonts.googleapis.com/css?family=Sunflower:1 Failed to load resource: the server responded with a status of 400 ()
+fonts.googleapis.com/css?family=UnifrakturCook:1 Failed to load resource: the server responded with a status of 400 ()
+
+reference link:
+[Github issues](https://github.com/typekit/webfontloader/issues/401)
 ## Include:
 
 + Working links to the google fonts menu items
