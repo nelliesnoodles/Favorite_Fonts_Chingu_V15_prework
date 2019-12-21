@@ -12,6 +12,8 @@ let light_theme_check;
 let dark_theme_check;
 let type_something;
 let reset;
+let main;  //<-- not in use yet
+let body;
 
 const Http = new XMLHttpRequest();
 const url='https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCM8prGHcP7hRrejX-WrHzBxx6H-5IPzpQ';
@@ -44,6 +46,8 @@ function set_DOM() {
     dark_theme_check = document.getElementById("darkTheme");
     type_something = document.getElementById("type_something");
     reset = document.getElementById("reset");
+    //main = document.getElementById("main");
+    body = document.getElementById("body");
 }
 
 
@@ -193,13 +197,15 @@ function append_font_names(){
 function create_cards(){
   var max = font_names.length - 1;
   i = current
-  for(i; i<max; i++){
+  amount = current + load_card_amount
+  for(i; i<max && i< amount; i++){
      var fontName = font_names[i];
 
      var newNode = document.createElement('div');
      var newH2 = document.createElement('h2');
      var newH3 = document.createElement('h3');
      newH2.innerHTML = fontName;
+     newH2.style.fontFamily = fontName;
      newH3.className = 'sometext';
      newH3.id = 'sometext';
      newH3.style.fontFamily = fontName;
@@ -229,16 +235,37 @@ function reset_page_items(){
 
 }
 
-
+function add_loader(){
+  window.addEventListener('scroll', load_more)
+  console.log("loader added.")
+}
 //-----------  END reset ---------------------
 //----------  load more fonts ------------
 function load_more(){
-  if(window.scrollTop() > document.height - window.height){
+  x = window.scrollY
+  y = document.body.offsetHeight
+  z = window.innerHeight
+  console.log("Window has scrolled.", x + z, y)
+  if((window.innerHeight + window.scrollY) >= document.body.offsetHeight -10){
+    console.log("add cards....")
     current += load_card_amount
+    create_cards()
+    append_font_names()
+
 
   }
 }
-
+/* stack overflow:
+* https://stackoverflow.com/questions/3898130/check-if-a-user-has-scrolled-to-the-bottom
+element.addEventListener('scroll', function(event)
+{
+    var element = event.target;
+    if (element.scrollHeight - element.scrollTop === element.clientHeight)
+    {
+        console.log('scrolled');
+    }
+});
+*/
 //----- SET listeners, window.load --------------
 function set_listeners() {
     dark_theme_check.addEventListener('click', get_and_set_checks);
@@ -246,7 +273,7 @@ function set_listeners() {
     reset.addEventListener('click', reset_page_items);
 
 
-    //create_cards()
+
 
 }
 
@@ -257,9 +284,10 @@ function assign_json(myJson) {
   })
   font_names = modifiedData
   console.log("assigning font_names...")
-  console.log(font_names)
+  //console.log(font_names)
   create_cards()
   append_font_names()
+  add_loader()
   //console.log(modifiedData)
 
 }
@@ -275,8 +303,10 @@ async function get_fonts() {
 
 window.onload = function () {
     set_DOM()
-    set_listeners()
     get_fonts()
+    set_listeners()
+
+
 
 
 }
