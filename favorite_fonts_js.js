@@ -369,6 +369,7 @@ function call_keydown_search() {
   }
 //------------------------END -------------------------
 //----- check if link exists already in head
+/* // IMPORTANT!!!  exists breaks the browser
 function check_head(alink){
   element = document.getElementsByTagName('link')
   for(i=0; i<element.length; i++){
@@ -377,8 +378,12 @@ function check_head(alink){
       if(existing_link == alink){
         return true
       }
+      else {
+        return false
+      }
   };
 }
+*/
 
 
 //  Append font names to head------
@@ -394,13 +399,15 @@ function append_font_names(search=false, searchlist=null){
   for(i; i<max && i<amount; i++){
        font_name = font_names[i]
        google_link = google_href + font_name
-       exists = check_head(google_link)
-       if(!exists){
-         var newlink = document.createElement('link');
-         newlink.rel = 'stylesheet';
-         newlink.href = google_link
-         document.head.appendChild(newlink);
-       }
+       // IMPORTANT!!!  exists breaks the browser
+       //exists = check_head(google_link)
+       //console.log(exists)
+       //if(!exists){
+       var newlink = document.createElement('link');
+       newlink.rel = 'stylesheet';
+       newlink.href = google_link
+       document.head.appendChild(newlink);
+       //}
      };
    }
    else{
@@ -409,13 +416,14 @@ function append_font_names(search=false, searchlist=null){
      for(i; i<max && i<amount; i++){
           font_name = searchlist[i]
           google_link = google_href + font_name
-          exists = check_head(google_link)
-          if(!exists){
+          // IMPORTANT!!!  exists breaks the browser
+          //exists = check_head(google_link)
+          //if(!exists){
             var newlink = document.createElement('link');
             newlink.rel = 'stylesheet';
             newlink.href = google_link
             document.head.appendChild(newlink);
-          }
+          //}
         };
       }
 }
