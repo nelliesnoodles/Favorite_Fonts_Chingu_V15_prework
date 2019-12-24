@@ -15,6 +15,7 @@ let reset;
 let main;  //<-- not in use yet
 let body;
 let font_deck;
+var current_search;
 
 const Http = new XMLHttpRequest();
 const url='https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCM8prGHcP7hRrejX-WrHzBxx6H-5IPzpQ';
@@ -245,6 +246,7 @@ function sort_tuples(tuple_array) {
     //reverse it, because the numbers are sorted by string code, not numeric value
     reversed = tuple_array.reverse()
     newlist = revert_names(reversed)
+    current_search = newlist
     return newlist
 }
 
@@ -403,6 +405,7 @@ function append_font_names(search=false, searchlist=null){
    }
    else{
      google_href="https://fonts.googleapis.com/css?family="
+     max = searchlist.length
      for(i; i<max && i<amount; i++){
           font_name = searchlist[i]
           google_link = google_href + font_name
@@ -445,7 +448,7 @@ function create_cards(search=false, searchlist=null){
     }
   }
   else{
-
+    max = searchlist.length
     for(i; i<max && i< amount; i++){
        var fontName = searchlist[i];
 
@@ -477,11 +480,14 @@ function reset_page_items(){
   window.scrollTo(0,0)
   origin_text = '"When you reach the end of your rope, tie a knot in it and hang on." -Franklin D. Roosevelt';
   element = document.getElementsByClassName("sometext");
+  font_deck.innerHTML =''
   for(i=0; i<element.length; i++){
      childnode = element[i];
      childnode.style.fontSize = new_size;
      childnode.innerHTML = origin_text;
   }
+  append_font_names()
+  create_cards()
 
 }
 
@@ -498,9 +504,19 @@ function load_more(){
   console.log("Window has scrolled.", x + z, y)
   if((window.innerHeight + window.scrollY) >= document.body.offsetHeight -10){
     console.log("add cards....")
+    active_element = document.activeElement
+    //console.log(active_element)
+    if(active_element.id != "search"){
     current += load_card_amount
     create_cards()
     append_font_names()
+  }
+    else{
+      current += load_card_amount
+      create_cards(true, current_search)
+      append_font_names(true, current_search)
+
+    }
 
 
   }
