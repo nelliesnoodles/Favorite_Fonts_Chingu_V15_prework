@@ -10,9 +10,7 @@ project by Nellie Tobey
 
 [Chingu Favorite Fonts on Github](https://github.com/chingu-voyages/voyage-prework-tier2-favfonts)
 
-This project uses two API's:
-
-[Google fonts API](https://developers.google.com/fonts/docs/getting_started)
+This project uses this API to load google font names:
 
 [Google fonts Developer API](https://developers.google.com/fonts/docs/developer_api)
 
@@ -48,9 +46,11 @@ reference link:
 
 ### files:
 + javascript
+
+.. favorite_fonts_js.js
 + html
 
-.. Favorite_fonts.html
+.. index.html
 
 + css
 
@@ -69,3 +69,9 @@ reference link:
 .. console.log()
 
 .. manual break and fix
+
+##TO-DO
++ make javascript function documentation
++ have the cursor image change
++ work on a way to keep code from appending an already existing font name link
++ break it, and fix it more
