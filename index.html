@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- meta viewport copied from Google Fonts -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="custom_favorite_fonts.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <!-- font awesome license     https://fontawesome.com/license  SVG used for reset icon in the tools bar.-->
+    <script type="text/javascript" src="favorite_fonts_js.js"></script>
+    <title>Voyage 15 Favorite Fonts</title>
+</head>
+<body id="body">
+  <!--------  NAV BAR -->
+    <nav id="nav_bar">
+        <div class="left_align">
+            <h4 class="title">Google FONTS</h4>
+        </div>
+        <div class="right_align">
+        <a class="nav_link" href="https://fonts.google.com/" target="_blank">CATALOG</a>
+        <a class="nav_link" href="https://fonts.google.com/featured" target="_blank">FEATURED</a>
+        <a class="nav_link" href="https://design.google/library/google-fonts/?utm_source=Google&utm_medium=Fonts&utm_campaign=Article%20Tab" target="_blank">ARTICLES</a>
+        <a class="nav_link" href="https://fonts.google.com/about" target="_blank">ABOUT</a>
+        </div>
+
+
+    </nav>
+    <!-----  TOOLS BAR -->
+    <div class="tools_bar" id="tools_bar">
+      <form>
+    <div>
+       <input type="text" id="search" placeholder="Search" onkeyup="call_keydown_search()"/>
+        <input id="type_something" type="text" placeholder="Type something here" onkeyup="call_keydown()"/>
+    </div>
+        <div class="themes">
+    <input type="checkbox" id="lightTheme" value='true'/>
+    <input type="checkbox" id="darkTheme" value='false'/>
+            </div>
+
+    <select id="fontSize" onchange="font_size_select(this)">
+        <option id="12px" value=12>12px</option>
+        <option id="24px" value=24>24px</option>
+        <option id="32px" value=32>32px</option>
+        <option id="40px" value=40>40px</option>
+    </select>
+    <div id="reset_box">
+    <input type="reset" id="reset" value=''/>
+    <h2 class="hidden">Reset, Scroll to Top</h2>
+  </div>
+  </form>
+
+        </div>
+        <!---------  MAIN font displays  -->
+    <main id="main">
+        <!--  display the google API cards here-->
+        <div class="FontDeck" id="FontDeck">
+          <!--
+            <div class="font_card" id="font_card">
+                <h2>FONTS NAME</h2>
+                <h3 class="sometext" id="sometext">
+                "When you reach the end of your rope, tie a knot in it and hang on." -Franklin D. Roosevelt</h3>
+            </div>
+          -->
+        </div>
+
+
+    </main>
+    <footer>
+        <button id="back_to_top">Back to top</button>
+        Created By: Nellie Tobey for Chingu Voyage 15 solo-project
+    </footer>
+
+</body>
+</html>
