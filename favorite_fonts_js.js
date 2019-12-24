@@ -278,7 +278,9 @@ function search_more(search_value) {
             if (word.length >= search_value.length) {
                 for (n = 0; n <= length_of_user_word; n++) {
                     x = word.charAt(n)
+                    x = x.toLowerCase()
                     y = search_value.charAt(n)
+                    y = y.toLowerCase()
                     if (x == y) {
                         total += 1;
                     }
@@ -290,7 +292,9 @@ function search_more(search_value) {
                 length_of_search_value = search_value.length
                 for (b = 0; b <= word.length; b++) {
                     x = word.charAt(b)
+                    x = x.toLowerCase()
                     y = search_value.charAt(b)
+                    y = y.toLowerCase()
                     if (x == y) {
                         total += 1;
                     }
