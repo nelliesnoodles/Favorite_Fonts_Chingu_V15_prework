@@ -1,21 +1,30 @@
 ###Documentation for the favorite_fonts_js javascript files
 #By Nellie Tobey
 ##Pre-set Variables:
--light_theme_check **For getting switch value and activation of light mode theme.**
+---------------------------
+#light_theme_check
+--For getting switch value and activation of light mode theme.**
 ========================================
--dark_theme_check **For getting switch value and activation of dark mode theme.**
+#dark_theme_check
+--For getting switch value and activation of dark mode theme.**
 ========================================
--type_something **For getting and setting the user's display text in the font-cards.**
+#type_something
+--For getting and setting the user's display text in the font-cards.**
 ========================================
--reset **An image, form reset input that can scroll to the top and reset page defaults.**
+#reset
+--An image, form reset input that can scroll to the top and reset page defaults.**
 ========================================
--main **Not in use, may use this for more color/page themes.**
+#main
+--Not in use, may use this for more color/page themes.**
 ========================================
--body **For use in selecting a new theme (dark/light) from css, may not be necessary.**
+#body
+--For use in selecting a new theme (dark/light) from css, may not be necessary.**
 ========================================
--font_deck **the parent of where all font cards are added and displayed.**
+#font_deck
+--the parent of where all font cards are added and displayed.**
 ========================================
--current_search **for use in the search input, setting and getting results of user input.**
+#current_search
+--for use in the search input, setting and getting results of user input.**
 ========================================
 .. SEARCH waits for at least two characters to be typed before retrieving and sorting a list of matches.
 ========================================
