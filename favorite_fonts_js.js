@@ -17,31 +17,17 @@ let body;
 let font_deck;
 var current_search;
 
-const Http = new XMLHttpRequest();
+
 const url='https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCM8prGHcP7hRrejX-WrHzBxx6H-5IPzpQ';
 let google_api_json;
 let font_names;
 const load_card_amount = 12
 var current = 0
+
 //  -------------------------------------------------------------
 //  ---Set DOM elements into the javascript after window load ---
 //  -------------------------------------------------------------
 
-
-
-/*
-Http.open("GET", url);
-
-Http.onload = function() {
-    var data = JSON.parse(this.response);
-
-    modifiedData = data.items.map(item => {
-        return item.family;
-    })
-
-    console.log(modifiedData);
-}
-*/
 
 function set_DOM() {
     light_theme_check = document.getElementById("lightTheme");
@@ -524,6 +510,7 @@ function load_more(){
     append_font_names()
   }
     else{
+      console.log("search active")
       current += load_card_amount
       create_cards(true, current_search)
       append_font_names(true, current_search)

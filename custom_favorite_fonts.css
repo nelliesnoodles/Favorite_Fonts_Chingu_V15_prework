@@ -58,9 +58,9 @@ nav {
 div {
     display: flex;
     flex-direction: inherit;
-    margin: 10px;
+    margin: 20px;
     padding: 10px;
-    border-radius: 20%;
+    border-radius: 10%;
 }
 form {
   display: flex;
@@ -217,6 +217,11 @@ footer {
   word-wrap: normal;
   white-space: normal;
   font-size: 12px;
+  overflow-wrap: break-word;
+}
+
+.font_card h2{
+  font-size: 18px;
   overflow-wrap: break-word;
 }
 
