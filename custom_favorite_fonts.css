@@ -19,6 +19,10 @@ body {
 */
 a {
     color: #3a2d2d;
+    text-decoration: underline;
+}
+a:hover{
+  text-shadow: 1px 1px 2px purple;
 }
 
 
@@ -32,6 +36,11 @@ a {
     display: flex;
     font-size: 12px;
     flex-direction: column;
+    z-index: 20;
+  }
+  #lightTheme, #darkTheme {
+    width: 5px;
+    height: 5px;
   }
 }
 
@@ -58,13 +67,14 @@ nav {
 div {
     display: flex;
     flex-direction: inherit;
-    margin: 20px;
     padding: 10px;
     border-radius: 10%;
 }
 form {
   display: flex;
   flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
 }
 .right_align {
     display: flex;
@@ -106,7 +116,7 @@ img {
 .tools_bar {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 100vw;
     border-bottom: solid 1px purple;
     border-top: solid 1px purple;
     border-radius: initial;
@@ -121,22 +131,20 @@ img {
 }
 
     .tools_bar input {
+        display: flex;
+        justify-content: space-evenly;
         padding: 8px;
         margin: 0;
         border-radius: 10px;
-        font-size: 1em;
         text-align: center;
         border: none;
         width: 20vw;
-        box-shadow:  5px 3px rgba(10, 1, 10, 0.3);
     }
+
 #reset_box {
-
-
   display: block;
-
-
 }
+
 .hidden {
   display: none;
   margin: 0;
@@ -159,6 +167,10 @@ img {
   display: block;
 }
 
+#search, #type_something {
+  margin-right: 10px;
+  box-shadow: 1px 1px 1px grey;
+}
 /* for selecting a font size to display fetched google fonts in.*/
 select {
     font-size: 1em;
@@ -166,6 +178,8 @@ select {
     height: auto;
     width: auto;
     border-radius: 20%;
+    margin: auto;
+    margin-left: 5px;
 }
 
 option #12px {
@@ -230,12 +244,17 @@ footer {
     for checkbox to change the page between light/dark themes
 */
 .themes {
-    background-color: silver;
+    background-color: #e2dfe2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50%;
+    margin: auto;
 }
 #lightTheme {
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border-radius: 10px;
     background-color: white;
     border: solid 1px black;
@@ -245,8 +264,8 @@ footer {
 }
 #darkTheme {
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border-radius: 10px;
     background-color: black;
     box-shadow: rgba(228, 228, 228, 0.4) 4px 5px inset;
