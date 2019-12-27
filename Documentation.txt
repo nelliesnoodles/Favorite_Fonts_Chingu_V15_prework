@@ -39,7 +39,7 @@
 ##font_names
 --(string) font names retrieved from the google api json object through mapping**
 ========================================
-##load_card_amount = 12  
+##load_card_amount = 12
 --to limit the amount of loaded font cards the scrolling will activate**
 ========================================
 ##current = 0
