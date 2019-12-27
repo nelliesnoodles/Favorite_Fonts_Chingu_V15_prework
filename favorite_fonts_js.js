@@ -499,7 +499,7 @@ function load_more(){
   x = window.scrollY
   y = document.body.offsetHeight
   z = window.innerHeight
-  console.log("Window has scrolled.", x + z, y)
+  //console.log("Window has scrolled.", x + z, y)
   if((window.innerHeight + window.scrollY) >= document.body.offsetHeight -10){
     console.log("add cards....")
     active_element = document.activeElement
