@@ -70,7 +70,7 @@ reference link:
 
 .. manual break and fix
 
-##TO-DO
+## TO-DO
 + make javascript function documentation
 + have the cursor image change
 + work on a way to keep code from appending an already existing font name link

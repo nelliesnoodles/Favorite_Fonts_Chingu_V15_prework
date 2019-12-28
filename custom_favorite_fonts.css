@@ -57,9 +57,12 @@ a:hover{
     font-size: 12px;
   }
   #reset{
+    margin: 0;
+    padding: 0;
     height: 25px;
     width: 25px;
   }
+
   #lightTheme, #darkTheme {
     width: 5px;
     height: 5px;
