@@ -112,9 +112,9 @@ the users search_value and the font names added to the window.SEARCHLIST by the 
 ========================================
 #call_keydown_search()
 
-This function is called from the html input id='search'.  It's logic will determine wether to
+This function is called from the html input id='search'.  It's logic will determine whether to
 do the initial search of the google font names list, or to look to a list set after the initial search Into
-the window.SEARCHLIST.  It will not render the cards on the first letter entered into the search. Upon a second
+the window.SEARCHLIST.  It will render the cards on the first letter entered into the search by alphabetical order.  Upon a second
 letter being entered it will use that SEARCHLIST in the search_more to get the a list with closest matches first
 and then render those to the screen for the user.
 ========================================
