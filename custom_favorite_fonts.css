@@ -247,22 +247,26 @@ footer {
 
 .font_card {
     display: flex;
-    flex-direction: column;
-    width: 20vw;
     max-width: 50vw;
+    flex-direction: column;
     border-top: 2px solid grey;
     background: inherit;
     color: inherit;
     flex-wrap: wrap;
     overflow-wrap: break-word;
+    margin: 5px;
 
 }
+
+
 .font_card h3 {
-  max-width: 20vw;
   word-wrap: normal;
+  max-width: 20vw;
+  max-height: 100vh;
   white-space: normal;
   font-size: 12px;
   overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 .font_card h2{

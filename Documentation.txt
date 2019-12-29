@@ -152,6 +152,11 @@ Checks whether the page is scrolled to the bottom, and then increments the curre
 by the const load_card_amount(12) to get the next twelve items in the list, either the google
 fonts list or the SEARCHLIST to append to the font deck.
 ========================================
+#scroll_to_top()
+
+simply uses window.scrollTo(0,0) to scroll to the top of the page.
+
+========================================
 #set_listeners()
 
 sets the eventlisteners for the dark theme, light theme and reset Functions

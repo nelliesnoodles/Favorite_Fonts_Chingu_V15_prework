@@ -325,21 +325,23 @@ function call_keydown_search() {
       element_length = newstring.length
       search_array = font_names
 
-      if (element_length == 1 && element_length != 0) {
+      if (element_length != 0 && element_length == 1) {
           search_for(newstring, search_array)
           current = 0
           //console.log("first letter is entered, setting the window.SEARCHLIST")
+          if (window.SEARCHLIST) {
+            font_deck.innerHTML = ''
+            initial_list = window.SEARCHLIST
+            append_font_names(search=true, searchlist=initial_list)
+            create_cards(search=true, searchlist=initial_list)
+          }
 
       }
       else if (element_length > 1) {
+        console.log("more than one letter is entered.")
           //Check that there is a list stored in the window:
           if (window.SEARCHLIST) {
-              //blog notes:
-              //lets make sure this bit is working with a console.log()
-              //I went back into our search_for()  and removed the console.log of the newlist.
-              // x = window.SEARCHLIST
-              //console.log("window.SEARCHLIST exists")
-              //console.log(x)
+
               sorted_list = search_more(newstring)
               font_deck.innerHTML = ''
               append_font_names(search=true, searchlist=sorted_list)
@@ -349,9 +351,7 @@ function call_keydown_search() {
 
       }
       else {
-        //blog notes:
-          // our element_length is not 1, or greater than 1, so it is less than 1.  We want
-          //the window.SEARCHLIST emptied so if they are starting a new search string, we have a fresh list.
+          //the search has no characters, empty SEARCHLIST
           window.SEARCHLIST = [];
       }
 
@@ -488,18 +488,16 @@ function reset_page_items(){
   create_cards()
 
 }
-
-function add_loader(){
-  window.addEventListener('scroll', load_more)
-  console.log("loader added.")
-}
 //-----------  END reset ---------------------
+
 //----------  load more fonts ------------
 function load_more(){
   x = window.scrollY
   y = document.body.offsetHeight
   z = window.innerHeight
-  //console.log("Window has scrolled.", x + z, y)
+  /* Reference: stack overflow:
+  * https://stackoverflow.com/questions/3898130/check-if-a-user-has-scrolled-to-the-bottom
+  */
   if((window.innerHeight + window.scrollY) >= document.body.offsetHeight -10){
     console.log("add cards....")
     active_element = document.activeElement
@@ -520,18 +518,19 @@ function load_more(){
 
   }
 }
-/* stack overflow:
-* https://stackoverflow.com/questions/3898130/check-if-a-user-has-scrolled-to-the-bottom
-element.addEventListener('scroll', function(event)
-{
-    var element = event.target;
-    if (element.scrollHeight - element.scrollTop === element.clientHeight)
-    {
-        console.log('scrolled');
-    }
-});
-*/
+//--------for button at bottom of html, scroll to top of page-------
+function scroll_to_top(){
+  window.scrollTo(0,0);
+}
+//------------------ END ---------------------
+
 //----- SET listeners, window.load --------------
+
+function add_loader(){
+  window.addEventListener('scroll', load_more)
+  console.log("loader added.")
+}
+
 function set_listeners() {
     dark_theme_check.addEventListener('click', get_and_set_checks);
     light_theme_check.addEventListener('click', get_and_set_checks);
