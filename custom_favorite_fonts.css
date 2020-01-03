@@ -214,6 +214,7 @@ img {
         text-align: center;
         border: none;
         width: 20vw;
+        border-bottom: solid 2px #ccad93;
     }
 
 #reset_box {
