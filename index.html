@@ -31,11 +31,14 @@
     </nav>
     <!-----  TOOLS BAR -->
     <div class="tools_bar" id="tools_bar">
-      <form>
+      <form id="form_column">
     <div>
        <input type="text" id="search" placeholder="Search" onkeyup="call_keydown_search()"/>
         <input id="type_something" type="text" placeholder="Type something here" onkeyup="call_keydown()"/>
     </div>
+
+
+   <div id="form_row">
         <div class="themes">
     <input type="checkbox" id="lightTheme" value='true'/>
     <input type="checkbox" id="darkTheme" value='false'/>
@@ -48,13 +51,14 @@
         <option id="40px" value=40>40px</option>
     </select>
     <div id="reset_box">
-    <input type="reset" id="reset" value=''/>
+    <input type="reset" id="reset" value='reset'/>
+  </div></div>
 
-  </div>
 
-  <h2 class="hidden">Reset, Scroll to Top</h2>
+
 
   </form>
+</div>
 
         </div>
         <!---------  MAIN font displays  -->

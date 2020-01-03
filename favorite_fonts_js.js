@@ -432,11 +432,11 @@ function create_cards(search=false, searchlist=null){
        var newH2 = document.createElement('h2');
        var newH3 = document.createElement('h3');
        newH2.innerHTML = fontName;
-       newH2.style.fontFamily = fontName;
+       //newH2.style.fontFamily = fontName;
        newH3.className = 'sometext';
        newH3.id = 'sometext';
        newH3.style.fontFamily = fontName;
-       newH3.innerHTML = '"When you reach the end of your rope, tie a knot in it and hang on." -Franklin D. Roosevelt';
+       newH3.innerHTML = '"And the wall whispered back..."';
        newNode.className = 'font_card';
        //newNode.style.fontFamily = fontName;
 
@@ -454,11 +454,11 @@ function create_cards(search=false, searchlist=null){
        var newH2 = document.createElement('h2');
        var newH3 = document.createElement('h3');
        newH2.innerHTML = fontName;
-       newH2.style.fontFamily = fontName;
+       //newH2.style.fontFamily = fontName;
        newH3.className = 'sometext';
        newH3.id = 'sometext';
        newH3.style.fontFamily = fontName;
-       newH3.innerHTML = '"When you reach the end of your rope, tie a knot in it and hang on." -Franklin D. Roosevelt';
+       newH3.innerHTML = '... saying,"What a lovely day for rain."';
        newNode.className = 'font_card';
        //newNode.style.fontFamily = fontName;
 
@@ -476,7 +476,7 @@ function reset_page_items(){
   new_size = "12px";
   current = 0
   window.scrollTo(0,0)
-  origin_text = '"When you reach the end of your rope, tie a knot in it and hang on." -Franklin D. Roosevelt';
+  origin_text = '"And the wall whispered back..."';
   element = document.getElementsByClassName("sometext");
   font_deck.innerHTML =''
   for(i=0; i<element.length; i++){
